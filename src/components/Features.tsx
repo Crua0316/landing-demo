@@ -1,22 +1,8 @@
-import { useEffect, useRef } from 'react'
 import './Features.css'
 
 export default function Features() {
-  const ref = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const els = ref.current?.querySelectorAll<HTMLElement>('.reveal')
-    if (!els) return
-    const io = new IntersectionObserver(
-      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
-      { threshold: 0.08 }
-    )
-    els.forEach(el => io.observe(el))
-    return () => io.disconnect()
-  }, [])
-
   return (
-    <section className="section features-section" id="producto" ref={ref}>
+    <section className="section features-section" id="producto">
       <div className="container">
         <div className="features-header reveal">
           <span className="section-label">✦ Funcionalidades</span>

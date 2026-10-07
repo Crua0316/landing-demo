@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import './Pricing.css'
 
 const plans = [
@@ -36,24 +36,12 @@ const plans = [
 
 export default function Pricing() {
   const [annual, setAnnual] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const els = ref.current?.querySelectorAll<HTMLElement>('.reveal')
-    if (!els) return
-    const io = new IntersectionObserver(
-      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
-      { threshold: 0.1 }
-    )
-    els.forEach(el => io.observe(el))
-    return () => io.disconnect()
-  }, [])
 
   return (
-    <section className="section" id="precios" ref={ref}>
+    <section className="section" id="precios">
       <div className="container">
         <div className="pricing-header reveal">
-          <span className="section-label">💳 Precios</span>
+          <span className="section-label">✦ Precios</span>
           <h2 className="section-title">Simple y transparente</h2>
           <p className="section-sub">Sin sorpresas. Cambia de plan cuando quieras.</p>
 
@@ -99,7 +87,7 @@ export default function Pricing() {
                 {p.features.map(f => (
                   <li key={f}>
                     <svg viewBox="0 0 16 16" fill="none">
-                      <path d="M3 8l3.5 3.5L13 4.5" stroke={p.highlight ? '#4F46E5' : '#10B981'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                     {f}
                   </li>

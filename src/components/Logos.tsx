@@ -94,9 +94,10 @@ function Chip({ logo }: { logo: LogoDef }) {
   )
 }
 
+const row1 = [...logos, ...logos]
+const row2 = [...logos.slice(5), ...logos.slice(0, 5), ...logos.slice(5), ...logos.slice(0, 5)]
+
 export default function Logos() {
-  const row1 = [...logos, ...logos]
-  const row2 = [...logos.slice(5), ...logos.slice(0, 5), ...logos.slice(5), ...logos.slice(0, 5)]
   return (
     <section className="logos-section">
       <div className="logos-label-wrap">
@@ -104,15 +105,15 @@ export default function Logos() {
         <p className="logos-label-text">Usado por equipos en más de 50 países</p>
         <span className="logos-label-line" />
       </div>
-      <div className="logos-rows">
+      <div className="logos-rows" aria-hidden="true">
         <div className="logos-overflow">
           <div className="logos-track">
-            {row1.map((logo, i) => <Chip key={i} logo={logo} />)}
+            {row1.map((logo, i) => <Chip key={`r1-${logo.name}-${i}`} logo={logo} />)}
           </div>
         </div>
         <div className="logos-overflow">
           <div className="logos-track logos-track-reverse">
-            {row2.map((logo, i) => <Chip key={i} logo={logo} />)}
+            {row2.map((logo, i) => <Chip key={`r2-${logo.name}-${i}`} logo={logo} />)}
           </div>
         </div>
       </div>
