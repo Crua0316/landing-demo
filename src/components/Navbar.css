@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .nav-logo {
@@ -42,10 +42,10 @@
 .nav-links {
   display: flex;
   align-items: center;
-  gap: .25rem;
+  gap: .15rem;
 }
 .nav-link {
-  padding: .45rem .75rem;
+  padding: .5rem 1rem;
   font-size: .875rem;
   font-weight: 500;
   color: rgba(255,255,255,.65);
@@ -53,7 +53,7 @@
   transition: color .15s, background .15s;
 }
 .nav-link:hover { color: #fff; background: rgba(255,255,255,.08); }
-.nav-divider { width: 1px; height: 20px; background: rgba(255,255,255,.12); margin: 0 .5rem; }
+.nav-divider { width: 1px; height: 20px; background: rgba(255,255,255,.12); margin: 0 .75rem; }
 
 .nav-hamburger {
   display: none;
