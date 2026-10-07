@@ -1,0 +1,34 @@
+.logos-section {
+  padding: 32px 0 64px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.logos-label {
+  text-align: center;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 1.75rem;
+}
+
+.logos-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.logo-chip {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  color: var(--fg-muted);
+  opacity: .5;
+  transition: opacity .2s;
+}
+.logo-chip:hover { opacity: .85; }

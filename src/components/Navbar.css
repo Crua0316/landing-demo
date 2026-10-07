@@ -1,0 +1,92 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  transition: background .2s, box-shadow .2s;
+}
+.navbar.scrolled {
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--border);
+}
+
+.nav-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -.02em;
+  color: var(--fg);
+  flex-shrink: 0;
+}
+.nav-logo-mark {
+  width: 30px; height: 30px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+.nav-logo-mark svg { width: 16px; height: 16px; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+}
+.nav-link {
+  padding: .45rem .75rem;
+  font-size: .875rem;
+  font-weight: 500;
+  color: var(--fg-soft);
+  border-radius: 8px;
+  transition: color .15s, background .15s;
+}
+.nav-link:hover { color: var(--fg); background: var(--surface-2); }
+.nav-divider { width: 1px; height: 20px; background: var(--border); margin: 0 .5rem; }
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--fg);
+  border-radius: 2px;
+  transition: all .2s;
+}
+.nav-hamburger span.open:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger span.open:nth-child(2) { opacity: 0; }
+.nav-hamburger span.open:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  .nav-hamburger { display: flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: rgba(255,255,255,.97);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem 1.5rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    gap: .25rem;
+  }
+  .nav-links.open { display: flex; }
+  .nav-divider { display: none; }
+  .nav-link { padding: .65rem .75rem; }
+  .btn-primary { margin-top: .5rem; justify-content: center; }
+}
