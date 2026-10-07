@@ -5,58 +5,97 @@
   border-bottom: 1px solid var(--border);
 }
 
-.logos-label {
-  display: block;
-  text-align: center;
-  font-size: .75rem;
+/* Label with decorative lines */
+.logos-label-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 2rem 2.75rem;
+}
+.logos-label-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border));
+}
+.logos-label-line:last-child {
+  background: linear-gradient(270deg, transparent, var(--border));
+}
+.logos-label-text {
+  font-size: .72rem;
   font-weight: 600;
-  letter-spacing: .08em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--fg-muted);
-  padding-bottom: 3.5rem;
+  white-space: nowrap;
+}
+
+/* Two rows */
+.logos-rows {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
 }
 
 .logos-overflow {
   overflow: hidden;
-  -webkit-mask: linear-gradient(90deg, transparent 0%, #000 15%, #000 85%, transparent 100%);
-  mask: linear-gradient(90deg, transparent 0%, #000 15%, #000 85%, transparent 100%);
+  -webkit-mask: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  mask: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
 }
 
 .logos-track {
   display: flex;
   align-items: center;
-  gap: 3.5rem;
+  gap: .8rem;
   width: max-content;
-  animation: marquee 30s linear infinite;
+  animation: marquee 32s linear infinite;
 }
 .logos-track:hover { animation-play-state: paused; }
+
+.logos-track-reverse {
+  animation: marquee-reverse 36s linear infinite;
+}
+.logos-track-reverse:hover { animation-play-state: paused; }
 
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
 
+/* Pill chips */
 .logo-chip {
   display: flex;
   align-items: center;
   gap: .5rem;
+  padding: .38rem .9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg);
   color: var(--fg-muted);
-  opacity: .45;
   white-space: nowrap;
-  transition: opacity .2s;
   flex-shrink: 0;
+  transition: border-color .2s, color .2s;
 }
-.logo-chip:hover { opacity: .85; }
+.logo-chip:hover {
+  border-color: rgba(99,102,241,.35);
+  color: var(--fg-soft);
+}
 
 .logo-chip-icon {
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  opacity: .55;
 }
 .logo-chip-icon svg { display: block; }
 
 .logo-chip-name {
-  font-size: .95rem;
+  font-size: .85rem;
   font-weight: 700;
   letter-spacing: -.02em;
 }

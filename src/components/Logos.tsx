@@ -85,19 +85,35 @@ const logos: LogoDef[] = [
   },
 ]
 
+function Chip({ logo }: { logo: LogoDef }) {
+  return (
+    <div className="logo-chip">
+      <span className="logo-chip-icon">{logo.mark}</span>
+      <span className="logo-chip-name">{logo.name}</span>
+    </div>
+  )
+}
+
 export default function Logos() {
-  const doubled = [...logos, ...logos]
+  const row1 = [...logos, ...logos]
+  const row2 = [...logos.slice(5), ...logos.slice(0, 5), ...logos.slice(5), ...logos.slice(0, 5)]
   return (
     <section className="logos-section">
-      <p className="logos-label">Usado por equipos en más de 50 países</p>
-      <div className="logos-overflow">
-        <div className="logos-track">
-          {doubled.map((logo, i) => (
-            <div key={i} className="logo-chip">
-              <span className="logo-chip-icon">{logo.mark}</span>
-              <span className="logo-chip-name">{logo.name}</span>
-            </div>
-          ))}
+      <div className="logos-label-wrap">
+        <span className="logos-label-line" />
+        <p className="logos-label-text">Usado por equipos en más de 50 países</p>
+        <span className="logos-label-line" />
+      </div>
+      <div className="logos-rows">
+        <div className="logos-overflow">
+          <div className="logos-track">
+            {row1.map((logo, i) => <Chip key={i} logo={logo} />)}
+          </div>
+        </div>
+        <div className="logos-overflow">
+          <div className="logos-track logos-track-reverse">
+            {row2.map((logo, i) => <Chip key={i} logo={logo} />)}
+          </div>
         </div>
       </div>
     </section>
