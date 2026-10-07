@@ -1,34 +1,49 @@
 .logos-section {
-  padding: 32px 0 64px;
+  padding: 40px 0;
+  background: var(--surface);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  background: var(--surface);
 }
 
 .logos-label {
+  display: block;
   text-align: center;
-  font-size: .8rem;
+  font-size: .75rem;
   font-weight: 600;
-  letter-spacing: .06em;
+  letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--fg-muted);
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
 }
 
-.logos-grid {
+.logos-overflow {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent 0%, #000 15%, #000 85%, transparent 100%);
+  mask: linear-gradient(90deg, transparent 0%, #000 15%, #000 85%, transparent 100%);
+}
+
+.logos-track {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
+  gap: 3rem;
+  width: max-content;
+  animation: marquee 24s linear infinite;
+}
+.logos-track:hover { animation-play-state: paused; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 .logo-chip {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 800;
   letter-spacing: -.03em;
   color: var(--fg-muted);
-  opacity: .5;
+  opacity: .4;
+  white-space: nowrap;
   transition: opacity .2s;
+  flex-shrink: 0;
 }
-.logo-chip:hover { opacity: .85; }
+.logo-chip:hover { opacity: .9; }
