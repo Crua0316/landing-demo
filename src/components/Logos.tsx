@@ -89,7 +89,7 @@ export default function Logos() {
   const doubled = [...logos, ...logos]
   return (
     <section className="logos-section">
-      <p className="logos-label container">Usado por equipos en más de 50 países</p>
+      <p className="logos-label">Usado por equipos en más de 50 países</p>
       <div className="logos-overflow">
         <div className="logos-track">
           {doubled.map((logo, i) => (
