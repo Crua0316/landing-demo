@@ -19,8 +19,12 @@
 .footer-main {
   display: grid;
   grid-template-columns: 1.6fr repeat(3, 1fr);
-  gap: 3rem 4rem;
-  padding: 64px 1.5rem 56px;
+  gap: 3rem 5rem;
+  padding: 80px 1.5rem 72px;
+}
+.footer .footer-main {
+  padding-top: 80px;
+  padding-bottom: 72px;
 }
 
 /* Brand */
@@ -118,15 +122,17 @@
 .footer-col {
   display: flex;
   flex-direction: column;
-  gap: .7rem;
+  gap: .85rem;
 }
 .footer-col-title {
   font-size: .72rem;
   font-weight: 700;
-  letter-spacing: .08em;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.55);
-  margin-bottom: .2rem;
+  color: rgba(255,255,255,.9);
+  padding-bottom: .65rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  margin-bottom: .25rem;
 }
 .footer-link {
   font-size: .82rem;

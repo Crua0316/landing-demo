@@ -25,9 +25,9 @@
 .logos-track {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 3.5rem;
   width: max-content;
-  animation: marquee 24s linear infinite;
+  animation: marquee 30s linear infinite;
 }
 .logos-track:hover { animation-play-state: paused; }
 
@@ -37,13 +37,26 @@
 }
 
 .logo-chip {
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: -.03em;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
   color: var(--fg-muted);
-  opacity: .4;
+  opacity: .45;
   white-space: nowrap;
   transition: opacity .2s;
   flex-shrink: 0;
 }
-.logo-chip:hover { opacity: .9; }
+.logo-chip:hover { opacity: .85; }
+
+.logo-chip-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.logo-chip-icon svg { display: block; }
+
+.logo-chip-name {
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+}
